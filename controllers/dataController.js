@@ -23,10 +23,11 @@ const dataController = {
 
     },
 
-    //EDIT - basically the same as show, doesn't need its own route
+    //EDIT - basically the same as show, we're just displaying the
+    //       edit form instead. Doesn't need its own DB route
     //SHOW
     show(req, res, next) {
-        
+
     }
 
 }
