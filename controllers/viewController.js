@@ -2,40 +2,34 @@ const RESOURCE_PATH = '/logs'
 
 const viewController = {
     //INDEX
-    index(req, res, next) {
-        
+    index (req, res, next) {
+        res.render('logs/Index', res.locals.data)
     },
 
     //NEW
-    new(req, res, next) {
-
-    },
-
-    //DELETE
-    delete(req, res, next) {
-
-    },
-
-    //UPDATE
-    update(req, res, next) {
-
-    },
-
-    //CREATE
-    create(req, res, next) {
-
+    newView (req, res, next) {
+        res.render('logs/New')
     },
 
     //EDIT
-    edit(req, res, next) {
-
+    editView (req, res, next) {
+        res.render('logs/Edit', res.locals.data)
     },
 
     //SHOW
-    show(req, res, next) {
-        
-    }
+    show (req, res, next) {
+        res.render('logs/Show', res.locals.data)
+    },
 
+    //REDIRECT USER TO HOME PAGE
+    redirectHome (req, res, next) {
+        res.redirect(RESOURCE_PATH)
+    },
+
+    //REDIRECT USER TO SHOW PAGE
+    redirectShow (req, res, next) {
+        res.redirect(`${RESOURCE_PATH}/${res.locals.data.log._id}`)
+    }
 }
 
 module.exports = viewController
